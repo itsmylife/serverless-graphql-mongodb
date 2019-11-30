@@ -5,6 +5,8 @@
    > `yarn global add now`
    > or
    > `npm install now -g`
+3. Create .env file and add this in it. Do not forget to change the string with your connection string
+   `DB_PATH=mongodb://<user>:<password>@<cluster_url>/example-db`
 
 ### Install
 
