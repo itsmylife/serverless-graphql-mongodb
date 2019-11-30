@@ -1,22 +1,35 @@
-### Prerequisites
+# Serverless GraphlQL API Example
 
-1. Create a free atlas account => https://www.mongodb.com/cloud/atlas
-2. Install [now](https://zeit.co/) globally
-   > `yarn global add now`
-   > or
-   > `npm install now -g`
-3. Create .env file and add this in it. Do not forget to change the string with your connection string
-   `DB_PATH=mongodb://<user>:<password>@<cluster_url>/example-db`
+[Example Deployment](https://serverless-graphql-api-example.itsmylife.now.sh/api/graphql)
 
-### Install
+A serverless GraphQL API built with TypeScript and MongoDB
 
-`$ yarn install`
+## Local Development
 
-### Run
+The [Now CLI](https://zeit.co/download) will need be downloaded, installed and logged into.
 
-`now dev`
+After that create a `.env` file and add the `DB_PATH` environment variable with the database URI.
 
-### Visit
+```
+DB_PATH=mongodb://<user>:<password>@ds123456.mlab.com:54321/example-db
+```
 
-http://localhost:3000/api/graphql
-https://serverless-graphql-api-example.itsmylife.now.sh/api/graphql
+Finally run
+
+```shell
+now dev
+```
+
+## Deploying to [Zeit](https://zeit.co/)
+
+First create a **Now Secret** with the name `serverless-graphql-api-example-dp-path` which has the database URI.
+
+```shell
+now secrets add serverless-graphql-api-example-dp-path "mongodb://root:root1user@ds021356.mlab.com:21356/serverless-graphql-api-example"
+```
+
+Then just deploy!
+
+```shell
+now
+```
